@@ -1,0 +1,47 @@
+:root {
+    --primary: #2563eb; --success: #16a34a; --danger: #dc2626;
+    --warning: #f59e0b; --bg: #f1f5f9; --text: #1e293b;
+}
+
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 10px; }
+
+.container { width: 100%; max-width: 900px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+
+.form-header { border-bottom: 2px solid #e2e8f0; margin-bottom: 20px; padding-bottom: 10px; }
+h2 { color: var(--primary); margin: 0; }
+
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+
+@media (min-width: 650px) {
+    .form-grid { grid-template-columns: 1fr 1fr; }
+    .full-width { grid-column: span 2; }
+    body { padding: 30px; }
+}
+
+.input-box { display: flex; flex-direction: column; }
+label { font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; }
+input, select { padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+
+.actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { flex: 1 1 calc(50% - 10px); padding: 12px; border: none; border-radius: 6px; color: white; font-weight: bold; cursor: pointer; transition: 0.2s; }
+
+@media (min-width: 650px) { .btn { flex: 1; } }
+
+.btn-save { background: var(--success); } .btn-print { background: var(--primary); }
+.btn-pdf { background: #e11d48; } .btn-clear { background: var(--warning); }
+.btn-exit { background: #64748b; }
+
+/* Tabela e Busca */
+.search-section { margin-top: 40px; border-top: 2px dashed #cbd5e1; padding-top: 20px; }
+.search-box { display: flex; gap: 8px; margin-bottom: 15px; }
+.table-container { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 450px; }
+th, td { padding: 12px; border-bottom: 1px solid #e2e8f0; text-align: left; font-size: 0.9rem; }
+
+/* Modal */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; padding: 20px; }
+.modal-content { background: white; padding: 25px; border-radius: 12px; width: 100%; max-width: 320px; text-align: center; }
+.modal-btns { display: flex; gap: 10px; margin-top: 15px; }
+
+@media print { .no-print { display: none !important; } .container { box-shadow: none; border: none; width: 100%; } }
